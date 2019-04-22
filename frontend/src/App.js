@@ -15,7 +15,7 @@ const history = createBrowserHistory()
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <Provider {...stores}>
           <Router history={history}>
             <Switch>
