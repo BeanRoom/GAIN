@@ -9,7 +9,11 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    //overflow-y: scroll;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+     }
 `
 
 const DMButton = styled.a`
