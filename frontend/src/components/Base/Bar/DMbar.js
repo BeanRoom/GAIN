@@ -18,7 +18,7 @@ const Wrapper = styled.div`
      }
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
     width: 100%;
     height: 30px;
     line-height: 30px;
@@ -48,12 +48,14 @@ class DMbar extends React.Component{
                 <Button>Home</Button>
                 <Button>Board</Button>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button><Link to='/channels/@me/1?#'>kim</Link></Button>
-                <Button><Link to='/channels/@me/2?#'>lee</Link></Button>
-                <Button><Link to='/channels/@me/3?#'>choi</Link></Button>
+                <Button to='/channels/@me/1?#'>kim</Button>
+                <Button to='/channels/@me/2?#'>lee</Button>
+                <Button to='/channels/@me/3?#'>choi</Button>
             </Wrapper>
         )
     }
 }
+
+// TODO : Nav Link 연결, 이중 라우팅으로 채팅 구현, Redirect 컴포넌트 사용하여 Login페이지로 이동
 
 export default DMbar;
