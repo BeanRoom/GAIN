@@ -3,19 +3,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    background-color: blue;
-    width: 50px;
+    flex: 1;
+    background-color: red;
     height: 100%;
 `
-
-
-
-class Menubar extends React.Component{
+class ChatForm extends React.Component{
     render(){
         return(
-            <Wrapper>Menubar</Wrapper>
+            <Wrapper>ChatForm</Wrapper>
         )
     }
 }
 
-export default Menubar;
+export default ChatForm;

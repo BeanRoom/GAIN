@@ -3,19 +3,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    background-color: blue;
-    width: 50px;
+    background-color: green;
+    width: 150px;
     height: 100%;
 `
 
-
-
-class Menubar extends React.Component{
+class Serverbar extends React.Component{
     render(){
         return(
-            <Wrapper>Menubar</Wrapper>
+            <Wrapper>Serverbar</Wrapper>
         )
     }
 }
 
-export default Menubar;
+export default Serverbar;
