@@ -3,17 +3,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    background-color: blue;
-    width: 50px;
+    background-color: yellow;
+    width: 150px;
     height: 100%;
 `
-
-class Menubar extends React.Component{
+class Channelbar extends React.Component{
     render(){
         return(
-            <Wrapper>Menubar</Wrapper>
+            <Wrapper>Channelbar</Wrapper>
         )
     }
 }
 
-export default Menubar;
+export default Channelbar;

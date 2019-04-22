@@ -2,18 +2,20 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import Menubar from 'components/Base/Bar/Menubar'
+import Serverbar from 'components/Base/Bar/Serverbar'
+import DMbar from 'components/Base/Bar/DMbar'
+import ChatContainer from 'containers/ChatContainer'
 
 const GlobalStyle = createGlobalStyle`
     html, body {
-    height: 100%;
-    margin: 0px;
+        height: 100%;
+        margin: 0px;
     }
     #root{
-    height: 100%;
+        height: 100%;
     }
     .App{
-    height: 100%;
+        height: 100%;
     }
 `
 
@@ -23,33 +25,15 @@ const Wrapper = styled.div`
     height: 100%;
 `
 
-const Serverbar = styled.div`
-    background-color: green;
-    width: 150px;
-    height: 100%;
-`
-
-const Channelbar = styled.div`
-    background-color: yellow;
-    width: 150px;
-    height: 100%;
-`
-
-const ChatForm = styled.div`
-    flex: 1;
-    background-color: red;
-    height: 100%;
-`
-
 class Home extends React.Component{
     render(){
         return(
             <Wrapper>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></link>
                 <GlobalStyle />
-                <Menubar>Menubar</Menubar>
-                <Serverbar>Serverbar</Serverbar>
-                <Channelbar>Channelbar</Channelbar>
-                <ChatForm>chat</ChatForm>
+                <Serverbar/>
+                <DMbar/>
+                <ChatContainer/>
             </Wrapper>
         )
     }
