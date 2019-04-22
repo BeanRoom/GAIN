@@ -2,6 +2,8 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
+import Menubar from 'components/Base/Bar/Menubar'
+
 const GlobalStyle = createGlobalStyle`
     html, body {
     height: 100%;
@@ -21,31 +23,21 @@ const Wrapper = styled.div`
     height: 100%;
 `
 
-const Menubar = styled.div`
-    background-color: blue;
-    flex: 1;
-    width: 100%;
-    height: 100%;
-`
-
 const Serverbar = styled.div`
     background-color: green;
-    flex: 3;
-    width: 100%;
+    width: 150px;
     height: 100%;
 `
 
 const Channelbar = styled.div`
     background-color: yellow;
-    flex: 3;
-    width: 100%;
+    width: 150px;
     height: 100%;
 `
 
 const ChatForm = styled.div`
-    flex: 10;
+    flex: 1;
     background-color: red;
-    width: 100%;
     height: 100%;
 `
 
