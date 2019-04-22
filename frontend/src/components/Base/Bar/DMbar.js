@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import { Link } from 'react-router-dom';
+
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
     width: 150px;
@@ -46,9 +48,9 @@ class DMbar extends React.Component{
                 <Button>Home</Button>
                 <Button>Board</Button>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button href='channels/@me/1'>kim</Button>
-                <Button href='channels/@me/2'>lee</Button>
-                <Button href='channels/@me/3'>choi</Button>
+                <Button><Link to='/channels/@me/1?#'>kim</Link></Button>
+                <Button><Link to='/channels/@me/2?#'>lee</Link></Button>
+                <Button><Link to='/channels/@me/3?#'>choi</Link></Button>
             </Wrapper>
         )
     }
