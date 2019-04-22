@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import Serverbar from 'components/Base/Bar/Serverbar'
 import DMbar from 'components/Base/Bar/DMbar'
-import ChatForm from 'components/Chat/ChatForm'
+import ChatContainer from 'containers/ChatContainer'
 
 const GlobalStyle = createGlobalStyle`
     html, body {
@@ -33,7 +33,7 @@ class Home extends React.Component{
                 <GlobalStyle />
                 <Serverbar/>
                 <DMbar/>
-                <ChatForm/>
+                <ChatContainer/>
             </Wrapper>
         )
     }

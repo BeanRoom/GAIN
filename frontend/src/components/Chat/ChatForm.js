@@ -15,6 +15,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column-reverse;
 `
+
 class ChatForm extends React.Component{
     state = {
         messages: [

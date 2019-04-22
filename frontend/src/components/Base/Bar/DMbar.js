@@ -48,9 +48,9 @@ class DMbar extends React.Component{
                 <Button>Home</Button>
                 <Button>Board</Button>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button to='/channels/@me/1?#'>kim</Button>
-                <Button to='/channels/@me/2?#'>lee</Button>
-                <Button to='/channels/@me/3?#'>choi</Button>
+                <Button to='/channels/@me/1'>kim</Button>
+                <Button to='/channels/@me/2'>lee</Button>
+                <Button to='/channels/@me/3'>choi</Button>
             </Wrapper>
         )
     }
