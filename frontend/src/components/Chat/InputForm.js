@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Form = styled.div`
+const Form = styled.form`
     display: flex;
 `
 
@@ -32,21 +32,15 @@ class InputForm extends React.Component {
         })
     }
 
-    handlePress = (f) => {
-        if(f.key == 'Enter'){
-          this.handleSubmit();
-        }
-    }
-
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
                 <StyledInput
                     value={this.state.msg}
                     onChange={this.handleChange}
                     onKeyPress={this.handlePress}
                 />
-                <button onClick={this.handleSubmit}>Send</button>
+                <button>Send</button>
             </Form>
         )
     }
