@@ -12,7 +12,14 @@ const Wrapper = styled.div`
 `
 
 const Server = styled.a`
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
     color: white;
+
+    &:hover{
+        background-color: ${oc.indigo[7]};
+    }
 `
 
 class Serverbar extends React.Component{
