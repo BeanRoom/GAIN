@@ -58,43 +58,6 @@ class Serverbar extends React.Component{
                 <Server>server 4</Server>
                 <Server>server 4</Server>
                 <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
             </Wrapper>
         )
     }

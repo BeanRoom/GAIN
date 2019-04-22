@@ -34,13 +34,12 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form action="#" onSubmit={this.handleSubmit}>
                 <StyledInput
                     value={this.state.msg}
                     onChange={this.handleChange}
-                    onKeyPress={this.handlePress}
                 />
-                <button>Send</button>
+                <input type="submit" value="Submit" />
             </Form>
         )
     }
