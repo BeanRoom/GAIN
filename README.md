@@ -10,3 +10,5 @@ GSM's Academic Interactive Notification
 
 ### backend
 - Koa
+- MariaDB
+- MongoDB
