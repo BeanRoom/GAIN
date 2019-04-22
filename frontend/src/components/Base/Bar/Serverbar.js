@@ -9,6 +9,11 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+     }
 `
 
 const Server = styled.a`
@@ -22,6 +27,7 @@ const Server = styled.a`
     }
 `
 
+
 class Serverbar extends React.Component{
     render(){
         return(
@@ -30,6 +36,64 @@ class Serverbar extends React.Component{
                 <Server>server 1</Server>
                 <Server>server 2</Server>
                 <Server>server 3</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
+                <Server>server 4</Server>
                 <Server>server 4</Server>
             </Wrapper>
         )
