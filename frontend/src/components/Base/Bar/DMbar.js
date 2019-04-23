@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
@@ -18,14 +18,18 @@ const Wrapper = styled.div`
      }
 `
 
-const Button = styled(Link)`
+const Button = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
     color: white;
 
     &:hover{
-        background-color: ${oc.indigo[7]};
+        background-color: ${oc.indigo[7]}
+    }
+
+    &.active{
+        background-color: ${oc.indigo[9]}
     }
 `
 
@@ -48,9 +52,9 @@ class DMbar extends React.Component{
                 <Button>Home</Button>
                 <Button>Board</Button>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button to='/channels/@me/1'>kim</Button>
-                <Button to='/channels/@me/2'>lee</Button>
-                <Button to='/channels/@me/3'>choi</Button>
+                <Button to='/channels/@me/1' activeClassName="active">kim</Button>
+                <Button to='/channels/@me/2' activeClassName="active">lee</Button>
+                <Button to='/channels/@me/3' activeClassName="active">choi</Button>
             </Wrapper>
         )
     }
