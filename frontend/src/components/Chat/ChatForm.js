@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import { shadow } from 'lib/styleUtils'
 
 import ChatList from './ChatList'
 import InputForm from './InputForm';
@@ -18,6 +19,13 @@ const Wrapper = styled.div`
 
 const Back = styled.div`
     flex: 1;
+`
+
+const ChatName = styled.div`
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    ${shadow(0)}
 `
 
 class ChatForm extends React.Component{
@@ -43,7 +51,7 @@ class ChatForm extends React.Component{
                 <InputForm sendMessage={this.sendMessage} />
                 <ChatList messages={this.state.messages}/>
                 <Back/>
-                {this.props.match.params.id}
+                <ChatName>{this.props.match.params.id}</ChatName>
             </Wrapper>
         )
     }

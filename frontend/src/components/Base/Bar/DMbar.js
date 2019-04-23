@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import { shadow } from 'lib/styleUtils'
 
 import { NavLink } from 'react-router-dom';
 
@@ -45,10 +46,18 @@ const H5 = styled.h5`
     font-size: 0.7em;
 `
 
+const Profile = styled.div`
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    ${shadow(0)}
+`
+
 class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
+                <Profile>JHT</Profile>
                 <Button to='/home' activeClassName="active">Home</Button>
                 <Button to='/board' activeClassName="active">Board</Button>
                 <Label><H5>개인 메세지</H5></Label>

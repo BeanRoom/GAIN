@@ -27,7 +27,6 @@ const Server = styled.a`
     }
 `
 
-
 class Serverbar extends React.Component{
     render(){
         return(

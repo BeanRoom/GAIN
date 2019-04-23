@@ -223,7 +223,8 @@ export const OverlayPanel = styled.div`
     width: 50%;
     transition: transform 0.6s ease-in-out;
     background-repeat: no-repeat;
-    background-size: 50% 50%;
+    background-size: 55% 50%;
+    background-position: bottom;
     ${
       props => {
         if(props.right) {
@@ -232,7 +233,6 @@ export const OverlayPanel = styled.div`
               right: 0;
               transform: translateX(20%);
               background-image: url(${img1});
-              background-position: bottom;
             `
           }
           else {
@@ -240,7 +240,6 @@ export const OverlayPanel = styled.div`
               right: 0;
               transform: translateX(0);
               background-image: url(${img1});
-              background-position: bottom;
             `
           }
         }
@@ -249,14 +248,12 @@ export const OverlayPanel = styled.div`
             return `
               transform: translateX(0);
               background-image: url(${img2});
-              background-position: bottom;
             `
           }
           else {
             return `
               transform: translateX(-20%);
               background-image: url(${img2});
-              background-position: bottom;
             `
           }
         }
