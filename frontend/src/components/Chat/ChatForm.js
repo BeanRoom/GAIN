@@ -36,6 +36,7 @@ class ChatForm extends React.Component{
     render(){
         return(
             <Wrapper>
+                {this.props.match.params.id}
                 <InputForm sendMessage={this.sendMessage} />
                 <ChatList messages={this.state.messages}/>
             </Wrapper>

@@ -20,9 +20,9 @@ class App extends React.Component {
           <Router history={history}>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/channels/@me/:id' component={Home} />
-              <Route exact path='/auth' component={Auth} />
-              <Route exact path='/board' component={Board} />
+              <Route path='/channels' component={Home} />
+              <Route path='/auth' component={Auth} />
+              <Route path='/board' component={Board} />
             </Switch>
           </Router>
         </Provider>
