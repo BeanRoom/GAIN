@@ -54,7 +54,15 @@ const Profile = styled.div`
 `
 
 const MenuContainer = styled.div`
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+`
 
+const DMContainer = styled.div`
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
 `
 
 class DMbar extends React.Component{
@@ -62,12 +70,16 @@ class DMbar extends React.Component{
         return(
             <Wrapper>
                 <Profile>JHT</Profile>
-                <Button to='/home' activeClassName="active">Home</Button>
-                <Button to='/board' activeClassName="active">Board</Button>
+                <MenuContainer>
+                    <Button to='/home' activeClassName="active">Home</Button>
+                    <Button to='/board' activeClassName="active">Board</Button>
+                </MenuContainer>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button to='/channels/@me/1' activeClassName="active">kim</Button>
-                <Button to='/channels/@me/2' activeClassName="active">lee</Button>
-                <Button to='/channels/@me/3' activeClassName="active">choi</Button>
+                <DMContainer>
+                    <Button to='/channels/@me/1' activeClassName="active">kim</Button>
+                    <Button to='/channels/@me/2' activeClassName="active">lee</Button>
+                    <Button to='/channels/@me/3' activeClassName="active">choi</Button>
+                </DMContainer>
             </Wrapper>
         )
     }

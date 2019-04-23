@@ -31,15 +31,16 @@ const ChatName = styled.div`
 class ChatForm extends React.Component{
     state = {
         messages: [
-            'aaa',
-            'bb'
         ]
     }
 
     sendMessage = (data) => {
         this.setState({
           messages: [
-            data,
+            {
+                writer: 'JHT',
+                msg: data
+            },
             ...this.state.messages
           ]
         })

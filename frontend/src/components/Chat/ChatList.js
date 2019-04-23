@@ -17,7 +17,7 @@ class ChatList extends React.Component{
             <Box>
                 {
                     messages.map((chat, index) => 
-                        <MessageBubble chat={chat} />
+                        <MessageBubble chat={chat} key={index}/>
                     )
                 }
             </Box>
