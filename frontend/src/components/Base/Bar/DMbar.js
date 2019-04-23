@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
-    width: 150px;
+    width: 200px;
     height: 100%;
     display: flex;
     flex-direction: column;

@@ -16,6 +16,10 @@ const Wrapper = styled.div`
     flex-direction: column-reverse;
 `
 
+const Back = styled.div`
+    flex: 1;
+`
+
 class ChatForm extends React.Component{
     state = {
         messages: [
@@ -36,9 +40,10 @@ class ChatForm extends React.Component{
     render(){
         return(
             <Wrapper>
-                {this.props.match.params.id}
                 <InputForm sendMessage={this.sendMessage} />
                 <ChatList messages={this.state.messages}/>
+                <Back/>
+                {this.props.match.params.id}
             </Wrapper>
         )
     }

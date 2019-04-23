@@ -2,7 +2,6 @@
 import React from 'react';
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
-import styled, { keyframes } from 'styled-components';
 import { OverlayContainer, OverlayDiv, OverlayPanel, StyledH1, StyledP, StyledButton } from 'components/Auth/Style';
 
 @inject("authToggle")

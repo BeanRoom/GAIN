@@ -7,15 +7,13 @@ export const Div = styled.div`
 `
 
 export const Container = styled.div`
-  height: 50%;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position:fixed;
-  top: 20%;
-  left: 28%;
   overflow: hidden;
-  width: 768px;
+  width: 100%;
   max-width: 100%;
   min-height: 480px;
 `
@@ -159,20 +157,6 @@ export const StyledInput = styled.input`
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
-`
-export const SocialContainer = styled.div`
-  margin: 20px 0;
-`
-
-export const SocialA = styled.a`
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
 `
 
 export const OverlayContainer = styled.div`

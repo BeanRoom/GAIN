@@ -2,7 +2,7 @@
 import React from 'react';
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
-import { SignUpContainer, Form, StyledH1, SocialContainer, SocialA, StyledSpan, StyledInput, StyledButton } from 'components/Auth/Style';
+import { SignUpContainer, Form, StyledH1, StyledSpan, StyledInput, StyledButton } from 'components/Auth/Style';
 import * as AuthApi from 'lib/api/auth';
 
 @inject("authToggle")
@@ -20,11 +20,6 @@ class SignUp extends React.Component {
       <SignUpContainer rightPanelActive={rightPanelActive}>
         <Form>
           <StyledH1>Create Account</StyledH1>
-          <SocialContainer>
-            <SocialA><i className="fab fa-facebook-f"></i></SocialA>
-            <SocialA><i className="fab fa-google-plus-g"></i></SocialA>
-            <SocialA><i className="fab fa-linkedin-in"></i></SocialA>
-          </SocialContainer>
           <StyledSpan>or use your email for registration</StyledSpan>
           <StyledInput name="userName" placeholder="Name" onChange={this.onChange} value={userName} onKeyPress={this.onPress} />
           <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} onKeyPress={this.onPress} />
