@@ -49,8 +49,8 @@ class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Button>Home</Button>
-                <Button>Board</Button>
+                <Button to='/home' activeClassName="active">Home</Button>
+                <Button to='/board' activeClassName="active">Board</Button>
                 <Label><H5>개인 메세지</H5></Label>
                 <Button to='/channels/@me/1' activeClassName="active">kim</Button>
                 <Button to='/channels/@me/2' activeClassName="active">lee</Button>

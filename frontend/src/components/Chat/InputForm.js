@@ -25,7 +25,8 @@ class InputForm extends React.Component {
         })
     }
 
-    handleSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.sendMessage(this.state.msg);
         this.setState({
             msg: ''
@@ -34,7 +35,7 @@ class InputForm extends React.Component {
 
     render() {
         return (
-            <Form action="#" onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit}>
                 <StyledInput
                     value={this.state.msg}
                     onChange={this.handleChange}
