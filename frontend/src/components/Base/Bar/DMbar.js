@@ -53,6 +53,10 @@ const Profile = styled.div`
     ${shadow(0)}
 `
 
+const MenuContainer = styled.div`
+
+`
+
 class DMbar extends React.Component{
     render(){
         return(
