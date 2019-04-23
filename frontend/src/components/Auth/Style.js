@@ -9,8 +9,6 @@ export const Div = styled.div`
 export const Container = styled.div`
   height: 100%;
   background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position:fixed;
   overflow: hidden;
   width: 100%;
@@ -156,7 +154,7 @@ export const StyledInput = styled.input`
   border: none;
   padding: 12px 15px;
   margin: 8px 0;
-  width: 100%;
+  width: 80%;
 `
 
 export const OverlayContainer = styled.div`

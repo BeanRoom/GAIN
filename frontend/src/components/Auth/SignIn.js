@@ -19,8 +19,7 @@ class SignIn extends React.Component {
     return(
       <SignInContainer rightPanelActive={rightPanelActive}>
           <Form>
-            <StyledH1>Sign in</StyledH1>
-              <StyledSpan>or use your account</StyledSpan>
+            <StyledH1>로그인</StyledH1>
               <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} />
               <StyledInput
                 name="password"
@@ -30,7 +29,7 @@ class SignIn extends React.Component {
                 value={password}
               />
             <StyledA>Forgot your password?</StyledA>
-            <StyledButton onClick={this.onSubmit}>Submit</StyledButton>
+            <StyledButton onClick={this.onSubmit}>로그인</StyledButton>
           </Form>
       </SignInContainer>
     )

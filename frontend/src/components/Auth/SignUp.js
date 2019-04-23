@@ -19,8 +19,8 @@ class SignUp extends React.Component {
     return(
       <SignUpContainer rightPanelActive={rightPanelActive}>
         <Form>
-          <StyledH1>Create Account</StyledH1>
-          <StyledSpan>or use your email for registration</StyledSpan>
+          <StyledH1>계정 생성</StyledH1>
+          <StyledSpan>학생 인증코드가 필요합니다.</StyledSpan>
           <StyledInput name="userName" placeholder="Name" onChange={this.onChange} value={userName} onKeyPress={this.onPress} />
           <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} onKeyPress={this.onPress} />
           <StyledInput
@@ -31,7 +31,7 @@ class SignUp extends React.Component {
             value={password}
             onKeyPress={this.onPress} 
           />
-          <StyledButton onClick={this.onSubmit}>Sign Up</StyledButton>
+          <StyledButton onClick={this.onSubmit}>회원가입</StyledButton>
         </Form>
       </SignUpContainer>
     )
