@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import img1 from 'static/1.png';
+import img2 from 'static/2.png';
 
 export const Div = styled.div`
   position: relative;
@@ -220,7 +222,8 @@ export const OverlayPanel = styled.div`
     height: 100%;
     width: 50%;
     transition: transform 0.6s ease-in-out;
-
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
     ${
       props => {
         if(props.right) {
@@ -228,12 +231,16 @@ export const OverlayPanel = styled.div`
             return `
               right: 0;
               transform: translateX(20%);
+              background-image: url(${img1});
+              background-position: bottom;
             `
           }
           else {
             return `
               right: 0;
               transform: translateX(0);
+              background-image: url(${img1});
+              background-position: bottom;
             `
           }
         }
@@ -241,11 +248,15 @@ export const OverlayPanel = styled.div`
           if(props.rightPanelActive) {
             return `
               transform: translateX(0);
+              background-image: url(${img2});
+              background-position: bottom;
             `
           }
           else {
             return `
               transform: translateX(-20%);
+              background-image: url(${img2});
+              background-position: bottom;
             `
           }
         }
