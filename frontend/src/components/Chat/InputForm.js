@@ -9,16 +9,34 @@ const Form = styled.form`
 `
 
 const StyledInput = styled.input`
+    position: absolute; 
+    width: 1px; 
+    height: 1px;
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip:rect(0,0,0,0); 
+    border: 0;
+`
+
+const InputLabel = styled.label`
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0px 10px;
 `
 
 const TextArea = styled.textarea`
     background-color: #ffffff;
-    border-top: 1px solid #000000;
-    border-radius: 5px;
+    border: 1px solid #000000;
     width: 100%;
-    height: 20px;
     font-size: 1em;
-    overflow-y: hidden;
+    overflow: visible;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     &:focus{
         outline: none;
@@ -55,11 +73,18 @@ class InputForm extends React.Component {
         }
     }
 
+    resize = (obj) => {
+        obj.style.height = "1px";
+        obj.style.height = (12+obj.scrollHeight)+"px";
+    }
+
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
+                <InputLabel for="file">+</InputLabel>
                 <StyledInput
                     type="file"
+                    id="file"
                 />
                 <TextArea
                     value={this.state.msg}
