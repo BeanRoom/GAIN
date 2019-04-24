@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import { NavLink } from 'react-router-dom';
+
 const Wrapper = styled.div`
     background-color: ${oc.indigo[8]};
     width: 150px;
@@ -16,7 +18,7 @@ const Wrapper = styled.div`
      }
 `
 
-const Server = styled.a`
+const Server = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
@@ -27,12 +29,11 @@ const Server = styled.a`
     }
 `
 
-
 class Serverbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Server href="#">Home</Server>
+                <Server to='/channels/@me/'>Home</Server>
                 <Server>server 1</Server>
                 <Server>server 2</Server>
                 <Server>server 3</Server>

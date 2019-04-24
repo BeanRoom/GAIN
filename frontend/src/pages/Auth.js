@@ -1,23 +1,27 @@
 // @flow
 import React from 'react';
-import { observable, action } from 'mobx'
-import { observer, inject } from 'mobx-react'
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
-import HeaderContainer from 'containers/Base/HeaderContainer';
 import AuthContainer from 'containers/Auth/AuthContainer';
 
+const GlobalStyle = createGlobalStyle`
+    html, body {
+        height: 100%;
+        margin: 0px;
+    }
+    #root{
+        height: 100%;
+    }
+    .App{
+        height: 100%;
+    }
+`
 
-@inject("authToggle")
-@observer
 class Auth extends React.Component {
   render() {
-
-    const { authOn, ModalOff } = this.props.authToggle;
-
     return (
       <div>
-        <HeaderContainer/>
+        <GlobalStyle />
         <AuthContainer />
       </div>
     );

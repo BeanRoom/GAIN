@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 import oc from 'open-color';
 
+import img1 from 'static/1.png';
+import img2 from 'static/2.png';
 
 export const Div = styled.div`
   position: relative;
 `
 
 export const Container = styled.div`
-  height: 50%;
+  height: 100%;
   background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position:fixed;
-  top: 20%;
-  left: 28%;
   overflow: hidden;
-  width: 768px;
+  width: 100%;
   max-width: 100%;
   min-height: 480px;
 `
@@ -142,7 +140,7 @@ export const StyledButton = styled.button`
   }
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -154,25 +152,12 @@ export const Form = styled.div`
 `
 
 export const StyledInput = styled.input`
-  background-color: #eee;
+  background-color: ${oc.indigo[1]};
   border: none;
+  border-radius: 5px;
   padding: 12px 15px;
   margin: 8px 0;
-  width: 100%;
-`
-export const SocialContainer = styled.div`
-  margin: 20px 0;
-`
-
-export const SocialA = styled.a`
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
+  width: 80%;
 `
 
 export const OverlayContainer = styled.div`
@@ -238,7 +223,9 @@ export const OverlayPanel = styled.div`
     height: 100%;
     width: 50%;
     transition: transform 0.6s ease-in-out;
-
+    background-repeat: no-repeat;
+    background-size: 55% 50%;
+    background-position: bottom;
     ${
       props => {
         if(props.right) {
@@ -246,12 +233,14 @@ export const OverlayPanel = styled.div`
             return `
               right: 0;
               transform: translateX(20%);
+              background-image: url(${img1});
             `
           }
           else {
             return `
               right: 0;
               transform: translateX(0);
+              background-image: url(${img1});
             `
           }
         }
@@ -259,11 +248,13 @@ export const OverlayPanel = styled.div`
           if(props.rightPanelActive) {
             return `
               transform: translateX(0);
+              background-image: url(${img2});
             `
           }
           else {
             return `
               transform: translateX(-20%);
+              background-image: url(${img2});
             `
           }
         }

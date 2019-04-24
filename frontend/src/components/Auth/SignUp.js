@@ -2,32 +2,28 @@
 import React from 'react';
 import { observable, action } from 'mobx'
 import { observer, inject } from 'mobx-react'
-import { SignUpContainer, Form, StyledH1, SocialContainer, SocialA, StyledSpan, StyledInput, StyledButton } from 'components/Auth/Style';
+import { SignUpContainer, Form, StyledH1, StyledSpan, StyledInput, StyledButton } from 'components/Auth/Style';
 import * as AuthApi from 'lib/api/auth';
 
 @inject("authToggle")
 @observer
 class SignUp extends React.Component {
-  @observable userName = ''
-  @observable email = ''
-  @observable passwords = ''
+  @observable id = ''
+  @observable authCode = ''
+  @observable password = ''
+  @observable passwordCheck = ''
 
   render() {
-    const { userName, email, password } = this
+    const { id, authCode, password, passwordCheck } = this
     const { rightPanelActive } = this.props.authToggle;
 
     return(
       <SignUpContainer rightPanelActive={rightPanelActive}>
-        <Form>
-          <StyledH1>Create Account</StyledH1>
-          <SocialContainer>
-            <SocialA><i className="fab fa-facebook-f"></i></SocialA>
-            <SocialA><i className="fab fa-google-plus-g"></i></SocialA>
-            <SocialA><i className="fab fa-linkedin-in"></i></SocialA>
-          </SocialContainer>
-          <StyledSpan>or use your email for registration</StyledSpan>
-          <StyledInput name="userName" placeholder="Name" onChange={this.onChange} value={userName} onKeyPress={this.onPress} />
-          <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} onKeyPress={this.onPress} />
+        <Form onSubmit={this.onSubmit}>
+          <StyledH1>계정 생성</StyledH1>
+          <StyledSpan>학생 인증코드가 필요합니다.</StyledSpan>
+          <StyledInput name="id" placeholder="Id" onChange={this.onChange} value={id} onKeyPress={this.onPress} />
+          <StyledInput name="authCode" placeholder="인증코드" onChange={this.onChange} value={authCode} onKeyPress={this.onPress} />
           <StyledInput
             name="password"
             type="password"
@@ -36,7 +32,15 @@ class SignUp extends React.Component {
             value={password}
             onKeyPress={this.onPress} 
           />
-          <StyledButton onClick={this.onSubmit}>Sign Up</StyledButton>
+          <StyledInput
+            name="passwordCheck"
+            type="password"
+            placeholder="PasswordCheck"
+            onChange={this.onChange}
+            value={passwordCheck}
+            onKeyPress={this.onPress} 
+          />
+          <StyledButton onClick={this.onSubmit}>회원가입</StyledButton>
         </Form>
       </SignUpContainer>
     )

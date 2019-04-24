@@ -2,12 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import { shadow } from 'lib/styleUtils'
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
-    width: 150px;
+    width: 200px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -18,14 +19,18 @@ const Wrapper = styled.div`
      }
 `
 
-const Button = styled(Link)`
+const Button = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
     color: white;
 
     &:hover{
-        background-color: ${oc.indigo[7]};
+        background-color: ${oc.indigo[7]}
+    }
+
+    &.active{
+        background-color: ${oc.indigo[9]}
     }
 `
 
@@ -41,16 +46,40 @@ const H5 = styled.h5`
     font-size: 0.7em;
 `
 
+const Profile = styled.div`
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    ${shadow(0)}
+`
+
+const MenuContainer = styled.div`
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+`
+
+const DMContainer = styled.div`
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+`
+
 class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Button>Home</Button>
-                <Button>Board</Button>
+                <Profile>JHT</Profile>
+                <MenuContainer>
+                    <Button to='/channels/@me/home' activeClassName="active">Home</Button>
+                    <Button to='/channels/@me/board' activeClassName="active">Board</Button>
+                </MenuContainer>
                 <Label><H5>개인 메세지</H5></Label>
-                <Button to='/channels/@me/1'>kim</Button>
-                <Button to='/channels/@me/2'>lee</Button>
-                <Button to='/channels/@me/3'>choi</Button>
+                <DMContainer>
+                    <Button to='/channels/@me/1' activeClassName="active">kim</Button>
+                    <Button to='/channels/@me/2' activeClassName="active">lee</Button>
+                    <Button to='/channels/@me/3' activeClassName="active">choi</Button>
+                </DMContainer>
             </Wrapper>
         )
     }

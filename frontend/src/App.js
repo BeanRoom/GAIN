@@ -3,9 +3,6 @@ import React from 'react';
 import { createBrowserHistory } from 'history';
 import { Provider } from "mobx-react"
 import { Router, Route, Switch } from "react-router-dom";
-import HeaderContainer from 'containers/Base/HeaderContainer';
-
-import './App.css'
 
 import { Home, Auth, Board } from 'pages';
 import { stores } from './stores'
@@ -20,9 +17,8 @@ class App extends React.Component {
           <Router history={history}>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/channels/@me/:id' component={Home} />
-              <Route exact path='/auth' component={Auth} />
-              <Route exact path='/board' component={Board} />
+              <Route path='/channels' component={Home} />
+              <Route path='/auth' component={Auth} />
             </Switch>
           </Router>
         </Provider>
