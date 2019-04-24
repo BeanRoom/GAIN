@@ -18,7 +18,7 @@ class SignUp extends React.Component {
 
     return(
       <SignUpContainer rightPanelActive={rightPanelActive}>
-        <Form>
+        <Form onSubmit={this.onSubmit}>
           <StyledH1>계정 생성</StyledH1>
           <StyledSpan>학생 인증코드가 필요합니다.</StyledSpan>
           <StyledInput name="userName" placeholder="Name" onChange={this.onChange} value={userName} onKeyPress={this.onPress} />

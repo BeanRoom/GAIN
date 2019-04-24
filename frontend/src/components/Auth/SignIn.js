@@ -9,28 +9,28 @@ import * as AuthApi from 'lib/api/auth';
 @inject("authStore")
 @observer
 class SignIn extends React.Component {
-  @observable email = ''
+  @observable id = ''
   @observable passwords = ''
 
   render() {
-    const { email, password } = this
+    const { id, password } = this
     const { rightPanelActive } = this.props.authToggle;
 
     return(
       <SignInContainer rightPanelActive={rightPanelActive}>
-          <Form>
-            <StyledH1>로그인</StyledH1>
-              <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} />
-              <StyledInput
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={this.onChange}
-                value={password}
-              />
-            <StyledA>Forgot your password?</StyledA>
-            <StyledButton onClick={this.onSubmit}>로그인</StyledButton>
-          </Form>
+        <Form onSubmit={this.onSubmit}>
+          <StyledH1>로그인</StyledH1>
+            <StyledInput name="id" placeholder="Id" onChange={this.onChange} value={id} />
+            <StyledInput
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={this.onChange}
+              value={password}
+            />
+          <StyledA>Forgot your password?</StyledA>
+          <StyledButton onClick={this.onSubmit}>로그인</StyledButton>
+        </Form>
       </SignInContainer>
     )
   }

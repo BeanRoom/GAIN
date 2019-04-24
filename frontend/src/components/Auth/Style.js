@@ -140,7 +140,7 @@ export const StyledButton = styled.button`
   }
 `
 
-export const Form = styled.div`
+export const Form = styled.form`
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -152,8 +152,9 @@ export const Form = styled.div`
 `
 
 export const StyledInput = styled.input`
-  background-color: #eee;
+  background-color: ${oc.indigo[1]};
   border: none;
+  border-radius: 5px;
   padding: 12px 15px;
   margin: 8px 0;
   width: 80%;
