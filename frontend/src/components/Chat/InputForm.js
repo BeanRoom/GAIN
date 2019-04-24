@@ -37,6 +37,7 @@ const TextArea = styled.textarea`
     overflow: visible;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    height: 22px;
 
     &:focus{
         outline: none;
@@ -56,7 +57,9 @@ class InputForm extends React.Component {
     }
 
     onSubmit = () => {
-        this.props.sendMessage(this.state.msg);
+        if(this.state.msg !== '') {
+            this.props.sendMessage(this.state.msg);
+        }
         this.setState({
             msg: ''
         })
@@ -71,17 +74,23 @@ class InputForm extends React.Component {
         if(e.keyCode === 13){
             this.onSubmit();
         }
+        this.setSize();
     }
 
-    resize = (obj) => {
-        obj.style.height = "1px";
-        obj.style.height = (12+obj.scrollHeight)+"px";
+    setSize = () => {
+        console.log(this.textarea.scrollHeight)
+        this.textarea.style.height = "0px";
+        if(this.textarea.scrollHeight < 139){
+            this.textarea.style.height = this.textarea.scrollHeight+"px"
+        }else{
+            this.textarea.style.height = "139px"
+        }
     }
 
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <InputLabel for="file">+</InputLabel>
+                <InputLabel htmlFor="file">+</InputLabel>
                 <StyledInput
                     type="file"
                     id="file"
@@ -90,6 +99,9 @@ class InputForm extends React.Component {
                     value={this.state.msg}
                     onChange={this.handleChange}
                     onKeyDown={this.onKeyDown}
+                    ref={ref => {
+                        this.textarea = ref;
+                    }}
                 />
             </Form>
         )

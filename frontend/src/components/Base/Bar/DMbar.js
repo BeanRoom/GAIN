@@ -71,8 +71,8 @@ class DMbar extends React.Component{
             <Wrapper>
                 <Profile>JHT</Profile>
                 <MenuContainer>
-                    <Button to='/home' activeClassName="active">Home</Button>
-                    <Button to='/board' activeClassName="active">Board</Button>
+                    <Button to='/channels/@me/home' activeClassName="active">Home</Button>
+                    <Button to='/channels/@me/board' activeClassName="active">Board</Button>
                 </MenuContainer>
                 <Label><H5>개인 메세지</H5></Label>
                 <DMContainer>
