@@ -1,126 +1,32 @@
 import Joi from 'joi';
-import Account from 'models/Account';
+import mysql from 'mysql';
 
-export const localRegister = async (ctx) => {
-    // 데이터 검증
-    const schema = Joi.object().keys({
-        username: Joi.string().alphanum().min(4).max(15).required(),
-        email: Joi.string().email().required(),
-        password: Joi.string().required().min(6)
-    });
+// env 환경 변수 불러오기
+import dotenv from 'dotenv';
+dotenv.config();
 
-    const result = Joi.validate(ctx.request.body, schema);
-
-    // 스키마 검증 실패
-    if(result.error) {
-        ctx.status = 400;
-        return;
-    }
-
-    let existing = null;
-    try {
-        existing = await Account.findByEmailOrUsername(ctx.request.body);
-    } catch(e) {
-        ctx.throw(500, e);
-    }
-
-    if(existing) {
-        ctx.status = 409;
-        ctx.body = {
-            key: existing.email === ctx.request.body.email ? 'email' : 'username'
-        };
-        return;
-    }
-
-    // 계정 생성
-    let account = null;
-    try {
-        account = await Account.localRegister(ctx.request.body);
-    } catch(e) {
-        ctx.throw(500, e);
-    }
-
-    let token = null;
-    try {
-        token = await account.generateToken();
-    } catch (e) {
-        ctx.throw(500, e);
-    }
-
-    //ctx.cookies.set('access_token', token, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7 });
-    ctx.body = { "token": token };
-};
-
-export const localLogin = async (ctx) => {
-    const schema = Joi.object().keys({
-        email: Joi.string().email().required(),
-        password: Joi.string().required()
-    });
-
-    const result = Joi.validate(ctx.request.body, schema);
-
-    if(result.error) {
-        ctx.status = 400;
-        return;
-    }
-
-    const { email, password } = ctx.request.body;
-
-    let account = null;
-    try{
-        account = await Account.findByEmail(email);
-    } catch(e) {
-        ctx.throw(500, e);
-    }
-
-    if(!account || !account.validatePassword(password)) {
-        ctx.status = 403;
-        return;
-    }
-
-    let token = null;
-    try {
-        token = await account.generateToken();
-    } catch (e) {
-        ctx.throw(500, e);
-    }
-
-    //ctx.cookies.set('access_token', token, { httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7 });
-    //ctx.body = account.profile; // 프로필 정보로 응답합니다.
-    ctx.body = { "token": token };
-};
-
-export const exists = async (ctx) => {
-    const { key, value } = ctx.params;
-    let account = null;
-
-    try {
-        // key 에 따라 findByEmail 혹은 findByUsername 을 실행합니다.
-        account = await (key === 'email' ? Account.findByEmail(value) : Account.findByUsername(value));    
-    } catch (e) {
-        ctx.throw(500, e);
-    }
-
-    ctx.body = {
-        exists: account !== null
-    };
+const authorizeUser = (authCode) => {
+    
+    if(authCode == process.env.studentCode)
+        return 0;
+    else if(authCode == process.env.teacherCode)
+        return 1;
+    else if(authCode == process.env.guestCode)
+        return 2;
+    else return 3;
 }
 
-export const logout = async (ctx) => {
-    ctx.cookies.set('access_token', null, {
-        maxAge: 0, 
-        httpOnly: true
+
+export const Register = async (ctx) => {
+    
+    const FirstRegisteration = Joi.object().key({
+        id : Joi.string().alphanum().min(6).max(50).required(),
+        password : Joi.string().min(6).max(50).required(),
+        authCode : Joi.alphanum().required()  
     });
-    ctx.status = 204;
+
+    
+
+    
+    ctx.body = 
 }
-
-export const check = (ctx) => {
-    const { user } = ctx.request;
-
-    if(!user) {
-        ctx.status = 403; // Forbidden
-        return;
-    }
-
-    ctx.body = user.profile;
-};
