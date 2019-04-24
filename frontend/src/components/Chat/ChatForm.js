@@ -15,6 +15,21 @@ const Wrapper = styled.div`
     
     display: flex;
     flex-direction: column-reverse;
+
+    &::-webkit-scrollbar{
+        width: 5px;
+        margin: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: ${oc.indigo[2]};
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: ${oc.indigo[5]};
+        height: 10%;
+        border-radius: 10px;
+    }
 `
 
 const Back = styled.div`
@@ -31,6 +46,90 @@ const ChatName = styled.div`
 class ChatForm extends React.Component{
     state = {
         messages: [
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            },
+            {
+                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                writer:'JHT'
+            },
+            {
+                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                writer:'KYH'
+            }
         ]
     }
 
