@@ -2,6 +2,8 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+import { connection } from 'lib/db.js';
+
 import Koa from 'koa';
 import Router from 'koa-router';
 import cors  from '@koa/cors';
@@ -10,6 +12,7 @@ const app = new Koa();
 const router = new Router();
 import api from './api';
 
+import mariadb from 'mysql';
 //import mongoose from 'mongoose';
 import bodyParser from 'koa-bodyparser';
 
@@ -17,6 +20,7 @@ import bodyParser from 'koa-bodyparser';
 
 app.use(cors());
 
+connection.connect();
 // mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
 // // mongodb 연결
 // mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }).then(
