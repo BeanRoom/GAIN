@@ -6,8 +6,25 @@ import oc from 'open-color';
 import MessageBubble from './MessageBubble';
 
 const Box = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    overflow-x: hidden;    
+    
+    &::-webkit-scrollbar{
+        width: 5px;
+        margin: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: ${oc.indigo[2]};
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: ${oc.indigo[5]};
+        height: 10%;
+        border-radius: 10px;
+    }
 `
 
 class ChatList extends React.Component{

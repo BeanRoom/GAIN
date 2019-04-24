@@ -4,8 +4,11 @@ import styled from 'styled-components';
 import oc from 'open-color';
 
 const Form = styled.form`
+    //position: fixed;
     display: flex;
-    margin: 10px;
+    bottom: 0px;
+    padding: 10px;
+    background-color: #ffffff;
 `
 
 const StyledInput = styled.input`
@@ -33,7 +36,8 @@ const TextArea = styled.textarea`
     border: 1px solid #000000;
     width: 100%;
     font-size: 1em;
-    overflow: visible;
+    // overflow: visible;
+    overflow-x: hidden;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 18px;
