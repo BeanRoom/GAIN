@@ -8,12 +8,13 @@ import * as AuthApi from 'lib/api/auth';
 @inject("authToggle")
 @observer
 class SignUp extends React.Component {
-  @observable userName = ''
-  @observable email = ''
-  @observable passwords = ''
+  @observable id = ''
+  @observable authCode = ''
+  @observable password = ''
+  @observable passwordCheck = ''
 
   render() {
-    const { userName, email, password } = this
+    const { id, authCode, password, passwordCheck } = this
     const { rightPanelActive } = this.props.authToggle;
 
     return(
@@ -21,14 +22,22 @@ class SignUp extends React.Component {
         <Form onSubmit={this.onSubmit}>
           <StyledH1>계정 생성</StyledH1>
           <StyledSpan>학생 인증코드가 필요합니다.</StyledSpan>
-          <StyledInput name="userName" placeholder="Name" onChange={this.onChange} value={userName} onKeyPress={this.onPress} />
-          <StyledInput name="email" placeholder="Email" onChange={this.onChange} value={email} onKeyPress={this.onPress} />
+          <StyledInput name="id" placeholder="Id" onChange={this.onChange} value={id} onKeyPress={this.onPress} />
+          <StyledInput name="authCode" placeholder="인증코드" onChange={this.onChange} value={authCode} onKeyPress={this.onPress} />
           <StyledInput
             name="password"
             type="password"
             placeholder="Password"
             onChange={this.onChange}
             value={password}
+            onKeyPress={this.onPress} 
+          />
+          <StyledInput
+            name="passwordCheck"
+            type="password"
+            placeholder="PasswordCheck"
+            onChange={this.onChange}
+            value={passwordCheck}
             onKeyPress={this.onPress} 
           />
           <StyledButton onClick={this.onSubmit}>회원가입</StyledButton>
