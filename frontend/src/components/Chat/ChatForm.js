@@ -11,25 +11,11 @@ const Wrapper = styled.div`
     flex: 1;
     background-color: white;
     height: 100%;
-    overflow-y: scroll;
+    width: 100%;
+    overflow-x: hidden;
     
     display: flex;
     flex-direction: column-reverse;
-
-    &::-webkit-scrollbar{
-        width: 5px;
-        margin: 10px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: ${oc.indigo[2]};
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background: ${oc.indigo[5]};
-        height: 10%;
-        border-radius: 10px;
-    }
 `
 
 const Back = styled.div`

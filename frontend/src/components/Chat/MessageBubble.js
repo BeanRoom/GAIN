@@ -14,7 +14,6 @@ const H3 = styled.h3`
 `
 
 const Span = styled.span`
-    width: 100%;
     overflow-x: hidden; 
 `
 
