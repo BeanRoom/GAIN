@@ -9,13 +9,12 @@ const Form = styled.form`
 `
 
 const StyledInput = styled.input`
-    position: absolute; 
     width: 1px; 
     height: 1px;
     padding: 0; 
     margin: -1px; 
     overflow: hidden; 
-    clip:rect(0,0,0,0); 
+    // clip:rect(0,0,0,0); 
     border: 0;
 `
 
@@ -37,7 +36,8 @@ const TextArea = styled.textarea`
     overflow: visible;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 22px;
+    height: 18px;
+    resize: none;
 
     &:focus{
         outline: none;
@@ -56,7 +56,8 @@ class InputForm extends React.Component {
         })
     }
 
-    onSubmit = () => {
+    handleSubmit = (event) => {
+        event.preventDefault();
         if(this.state.msg !== '') {
             this.props.sendMessage(this.state.msg);
         }
@@ -65,16 +66,12 @@ class InputForm extends React.Component {
         })
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        this.onSubmit();
-    }
-
     onKeyDown = (e) => {
-        if(e.keyCode === 13){
-            this.onSubmit();
-        }
         this.setSize();
+        if(e.keyCode === 13){
+            this.handleSubmit(e);
+            this.textarea.style.height = "18px"
+        }
     }
 
     setSize = () => {
@@ -90,7 +87,12 @@ class InputForm extends React.Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <InputLabel htmlFor="file">+</InputLabel>
+                <InputLabel 
+                    htmlFor="file"
+                    ref={ref=>{
+                        this.label = ref;
+                    }} 
+                >+</InputLabel>
                 <StyledInput
                     type="file"
                     id="file"
