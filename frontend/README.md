@@ -1,4 +1,5 @@
 # GAIN Frontend
 
 ## Getting started
-`npm start`
+electron 실행 `yarn start`
+web에서만 실행 `yarn react-start`

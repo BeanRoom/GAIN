@@ -1,4 +1,4 @@
 # GAIN Frontend
 
 ## Getting started
-`npm dev`
+`yarn dev`

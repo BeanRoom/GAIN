@@ -7,6 +7,7 @@ GSM's Academic Interactive Notification
 - React Router v4
 - Mobx
 - Styled-Components
+- Electron
 
 ### backend
 - Koa
