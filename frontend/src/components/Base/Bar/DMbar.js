@@ -5,6 +5,8 @@ import oc from 'open-color';
 import { shadow } from 'lib/styleUtils'
 
 import { NavLink } from 'react-router-dom';
+import Profile from 'components/Base/Header/Profile';
+import DMList from './DMList';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
@@ -13,74 +15,15 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        display: none;
-     }
 `
 
-const Button = styled(NavLink)`
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    color: white;
-
-    &:hover{
-        background-color: ${oc.indigo[7]}
-    }
-
-    &.active{
-        background-color: ${oc.indigo[9]}
-    }
-`
-
-const Label = styled.div`
-    text-align: left;
-`
-
-const H5 = styled.h5`
-    color: ${oc.indigo[1]}
-    margin-top: 10px;
-    margin-bottom: 0px;
-    margin-left: 15px;
-    font-size: 0.7em;
-`
-
-const Profile = styled.div`
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    ${shadow(0)}
-`
-
-const MenuContainer = styled.div`
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-`
-
-const DMContainer = styled.div`
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-`
 
 class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Profile>JHT</Profile>
-                <MenuContainer>
-                    <Button to='/channels/@me/home' activeClassName="active">Home</Button>
-                    <Button to='/channels/@me/board' activeClassName="active">Board</Button>
-                </MenuContainer>
-                <Label><H5>개인 메세지</H5></Label>
-                <DMContainer>
-                    <Button to='/channels/@me/1' activeClassName="active">kim</Button>
-                    <Button to='/channels/@me/2' activeClassName="active">lee</Button>
-                    <Button to='/channels/@me/3' activeClassName="active">choi</Button>
-                </DMContainer>
+                <Profile username={`JHT`}/>
+                <DMList />
             </Wrapper>
         )
     }

@@ -7,6 +7,8 @@ import { shadow } from 'lib/styleUtils'
 import ChatList from './ChatList'
 import InputForm from './InputForm';
 
+import ChatTitle from 'components/Base/Header/ChatTitle';
+
 const Wrapper = styled.div`
     flex: 1;
     background-color: white;
@@ -20,13 +22,6 @@ const Wrapper = styled.div`
 
 const Back = styled.div`
     flex: 1;
-`
-
-const ChatName = styled.div`
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    ${shadow(0)}
 `
 
 class ChatForm extends React.Component{
@@ -99,7 +94,7 @@ class ChatForm extends React.Component{
                 <InputForm sendMessage={this.sendMessage} />
                 <ChatList messages={this.state.messages}/>
                 <Back/>
-                <ChatName>{this.props.match.params.id}</ChatName>
+                <ChatTitle child={this.props.match.params.id} />
             </Wrapper>
         )
     }

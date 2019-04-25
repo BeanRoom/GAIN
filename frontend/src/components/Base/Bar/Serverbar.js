@@ -2,8 +2,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
+import { shadow } from 'lib/styleUtils'
 
-import { NavLink } from 'react-router-dom';
+
+import Home from 'components/Base/Header/Home';
+import ServerList from './ServerList';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[8]};
@@ -12,54 +15,15 @@ const Wrapper = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        display: none;
-     }
 `
 
-const Server = styled(NavLink)`
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    color: white;
-
-    &:hover{
-        background-color: ${oc.indigo[7]};
-    }
-`
 
 class Serverbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Server to='/channels/@me/'>Home</Server>
-                <Server>server 1</Server>
-                <Server>server 2</Server>
-                <Server>server 3</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
-                <Server>server 4</Server>
+                <Home to='/channels/@me/'/>
+                <ServerList />
             </Wrapper>
         )
     }
