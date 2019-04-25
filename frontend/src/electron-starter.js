@@ -9,9 +9,9 @@ function createWindow () {
   win = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
-  //const startUrl = process.env.ELECTRON_START_URL;
-  //win.loadURL(startUrl);
-  win.loadFile('index.html');
+  const startUrl = process.env.ELECTRON_START_URL;
+  win.loadURL(startUrl);
+  
   // Open the DevTools.
   win.webContents.openDevTools()
 
