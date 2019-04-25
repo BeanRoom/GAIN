@@ -22,7 +22,7 @@ class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Profile child={`JHT`}/>
+                <Profile username={`JHT`}/>
                 <DMList />
             </Wrapper>
         )
