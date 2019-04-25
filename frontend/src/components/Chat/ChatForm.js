@@ -33,87 +33,49 @@ class ChatForm extends React.Component{
     state = {
         messages: [
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 writer:'KYH'
             },
             {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                msg:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 writer:'JHT'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
                 writer:'KYH'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                writer:'KYH'
+            },            {
+                msg:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 writer:'KYH'
             },
             {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                msg:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 writer:'JHT'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
                 writer:'KYH'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                writer:'KYH'
+            },            {
+                msg:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                 writer:'KYH'
             },
             {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
+                msg:'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                 writer:'JHT'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
                 writer:'KYH'
             },
             {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
-                writer:'JHT'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
-                writer:'JHT'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
-                writer:'JHT'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
-                writer:'KYH'
-            },
-            {
-                msg:'ㅁㄴㅇ러ㅑㅓㅁㄴㅇ러냠어럼냉래ㅑㅁㄴ애럼ㄴ어랴ㅐㅁㄴㅇㄻ넝랴ㅓㅁㄴㅇ럼냐어랴ㅐㅁㄴㅇ런맹램ㄴㅇㄹ',
-                writer:'JHT'
-            },
-            {
-                msg:'asdfasdfsdafasdfasdfasfasdfasdfasdfasdfsdfasdfasdfasdfsd',
+                msg:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 writer:'KYH'
             }
         ]

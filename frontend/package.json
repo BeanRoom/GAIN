@@ -62,11 +62,14 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"
   },
+  "main": "src/electron-starter.js",
   "scripts": {
-    "start": "cross-env NODE_PATH=src node scripts/start.js",
+    "react-start": "cross-env NODE_PATH=src node scripts/start.js",
     "build": "node scripts/build.js",
     "deploy": "node scripts/build.js && firebase deploy",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "electron": "electron .",
+    "start": "nf start"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -127,5 +130,9 @@
       "react-app",
       "mobx"
     ]
+  },
+  "devDependencies": {
+    "electron": "^5.0.0",
+    "foreman": "^3.0.1"
   }
 }
