@@ -9,7 +9,7 @@ import Profile from 'components/Base/Header/Profile';
 import DMList from './DMList';
 
 const Wrapper = styled.div`
-    background-color: ${oc.indigo[6]};
+    background-color: ${oc.gray[8]};
     width: 200px;
     min-width: 200px;
     height: 100%;

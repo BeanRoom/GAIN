@@ -20,13 +20,27 @@ const Button = styled(NavLink)`
     height: 30px;
     line-height: 30px;
     color: white;
-
+    
     &:hover{
-        background-color: ${oc.indigo[7]}
+        background-color: ${oc.gray[7]};
+        text-decoration: none;
+    }
+
+    &:link{
+        text-decoration: none;
+    }
+
+    &:visited{
+        text-decoration: none;
+        color: white;
+    }    
+    
+    &:active{
+        text-decoration: none;
     }
 
     &.active{
-        background-color: ${oc.indigo[9]}
+        background-color: #565E64;
     }
 `
 
