@@ -49,7 +49,7 @@ const H5 = styled.h5`
 
 const Profile = styled.div`
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     line-height: 50px;
     ${shadow(0)}
 `
