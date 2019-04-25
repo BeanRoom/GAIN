@@ -5,6 +5,7 @@ import oc from 'open-color';
 import { shadow } from 'lib/styleUtils'
 
 import { NavLink } from 'react-router-dom';
+import Profile from 'components/Base/Header/Profile';
 
 const Wrapper = styled.div`
     background-color: ${oc.indigo[6]};
@@ -47,13 +48,6 @@ const H5 = styled.h5`
     font-size: 0.7em;
 `
 
-const Profile = styled.div`
-    width: 100%;
-    min-height: 50px;
-    line-height: 50px;
-    ${shadow(0)}
-`
-
 const MenuWrapper = styled.div`
     margin: 5px;
     display: flex;
@@ -70,7 +64,7 @@ class DMbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Profile>JHT</Profile>
+                <Profile child={`JHT`}/>
                 <MenuWrapper>
                     <Button to='/channels/@me/home' activeClassName="active">Home</Button>
                     <Button to='/channels/@me/board' activeClassName="active">Board</Button>
