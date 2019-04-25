@@ -12,7 +12,7 @@ const Component = styled.div`
 
     &::-webkit-scrollbar {
         display: none;
-     }
+    }
 `
 
 const Button = styled(NavLink)`
@@ -44,6 +44,12 @@ const Button = styled(NavLink)`
     }
 `
 
+const H4 = styled.h4`
+    margin: 0px;
+    margin-left: 10px;
+    font-weight: normal;
+`
+
 const Label = styled.div`
     text-align: left;
 `
@@ -72,14 +78,14 @@ const ServerList = () => {
     return (
         <Component>
             <MenuWrapper>
-                <Button to='/channels/@me/home' activeClassName="active">Home</Button>
-                <Button to='/channels/@me/board' activeClassName="active">Board</Button>
+                <Button to='/channels/@me/home' activeClassName="active"><H4>Home</H4></Button>
+                <Button to='/channels/@me/board' activeClassName="active"><H4>Board</H4></Button>
             </MenuWrapper>
             <Label><H5>개인 메세지</H5></Label>
             <DMWrapper>
-                <Button to='/channels/@me/1' activeClassName="active">kim</Button>
-                <Button to='/channels/@me/2' activeClassName="active">lee</Button>
-                <Button to='/channels/@me/3' activeClassName="active">choi</Button>
+                <Button to='/channels/@me/1' activeClassName="active"><H4>kim</H4></Button>
+                <Button to='/channels/@me/2' activeClassName="active"><H4>lee</H4></Button>
+                <Button to='/channels/@me/3' activeClassName="active"><H4>choi</H4></Button>
             </DMWrapper>
         </Component>
     );

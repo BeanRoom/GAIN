@@ -23,7 +23,7 @@ const Server = styled(NavLink)`
     color: white;
 
     &:hover{
-        background-color: ${oc.gray[7]};
+        background-color: ${oc.gray[8]};
     }
 
     &:link{
