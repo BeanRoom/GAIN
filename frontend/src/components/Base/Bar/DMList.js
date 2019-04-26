@@ -19,6 +19,7 @@ const Button = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
+    border-radius: 3px;
     color: white;
     
     &:hover{
@@ -83,9 +84,9 @@ const ServerList = () => {
             </MenuWrapper>
             <Label><H5>개인 메세지</H5></Label>
             <DMWrapper>
-                <Button to='/channels/@me/1' activeClassName="active"><H4>kim</H4></Button>
-                <Button to='/channels/@me/2' activeClassName="active"><H4>lee</H4></Button>
-                <Button to='/channels/@me/3' activeClassName="active"><H4>choi</H4></Button>
+                <Button to='/channels/@me/1' activeClassName="active"><H4>Kim</H4></Button>
+                <Button to='/channels/@me/2' activeClassName="active"><H4>Lee</H4></Button>
+                <Button to='/channels/@me/3' activeClassName="active"><H4>Choi</H4></Button>
             </DMWrapper>
         </Component>
     );

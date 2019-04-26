@@ -13,13 +13,14 @@ const Component = styled.div`
 
     &::-webkit-scrollbar {
         display: none;
-     }
+    }
 `
 
 const Server = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
+    border-radius: 3px;
     color: white;
 
     &:hover{
