@@ -1,31 +1,18 @@
 /*jshint esversion: 9 */
 import Router from 'koa-router';
 
-const post = new Router();
+const board = new Router();
 
-/* Functional */
+noBoardErrorMessage = {
+  'type': 'error',
+  'error': `There is no board named ${board}.`
+};
 
-board.post('/:board/write', (ctx, next) => {
-  try {
-    // DB 처리
-  } catch (e) {
-
-    console.log(e);
-    return;
-  }
-  ctx.body = {
-    'is_succeed': true
-  };
-});
-
-/* GET home page. */
 board.get('/:board', (ctx, next) => {
   let board = ctx.params.board; // get board name
-  if (typeof(board !== 'freeboard' && board !== 'notice' && board !== 'storage')) {
-    ctx.body = {
-      'type': 'error',
-      'error': `There is no board named ${board}.`
-    };
+  if ((board in ['freeboard', 'notice', 'storage'])) {
+    ctx.status = 400;
+    ctx.body = noBoardErrorMessage;
     return;
   }
   dbo.collection('board').find({
@@ -46,12 +33,9 @@ board.get('/:board', (ctx, next) => {
 board.get('/:board/:id', (ctx, next) => {
   let board = ctx.params.board;
   let id = ctx.params.id;
-  if ((board !== 'freeboard' && board !== 'notice' && board !== 'storage')) {
+  if ((board in ['freeboard', 'notice', 'storage'])) {
     ctx.status = 400;
-    ctx.body = {
-      'type': 'error',
-      'error': `There is no board named ${board}.`
-    };
+    ctx.body = noBoardErrorMessage;
     return;
   }
   // DB 처리
@@ -63,13 +47,26 @@ board.get('/:board/:id', (ctx, next) => {
   };
 });
 
-board.put('/:board/:id/edit', (ctx, next) => {
+board.post('/:board/new', (ctx, next) => {
+  // 세션 검증
   let board = req.params.board;
-  if ((board !== 'freeboard' && board !== 'notice' && board !== 'storage')) {
+  if ((board in ['freeboard', 'notice', 'storage'])) {
     ctx.status = 400;
-    ctx.body = {
-      'is_succeed': false
-    };
+    ctx.body = noBoardErrorMessage;
+    return;
+  }
+  ctx.status = 204;
+  ctx.body = {
+    'is_succeed': true
+  };
+});
+
+board.put('/:board/:id/edit', (ctx, next) => {
+  // 세션 검증
+  let board = req.params.board;
+  if ((board in ['freeboard', 'notice', 'storage'])) {
+    ctx.status = 400;
+    ctx.body = noBoardErrorMessage;
     return;
   }
   ctx.status = 204;
@@ -80,12 +77,11 @@ board.put('/:board/:id/edit', (ctx, next) => {
 
 
 board.delete('/:board/:id/delete', (ctx, next) => {
+  // 세션 검증
   var board = ctx.params.board;
-  if ((board !== 'freeboard' && board !== 'notice' && board !== 'storage')) {
+  if ((board in ['freeboard', 'notice', 'storage'])) {
     ctx.status = 400;
-    ctx.body = {
-      'is_succeed': false
-    };
+    ctx.body = noBoardErrorMessage;
     return;
   }
 });
