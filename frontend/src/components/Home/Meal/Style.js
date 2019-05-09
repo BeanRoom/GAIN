@@ -1,30 +1,53 @@
 import styled from 'styled-components';
 import oc from 'open-color';
 
-export const AllCard = styled.div`
+export const Content = styled.div`
     display: flex;
-    border-radius: 6px;
-    background-position: center;
-    background-size: cover;
-    text-align: center;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    height: 100%;
+    flex-wrap: wrap;
+    max-width: 1000px;
+`;
+
+export const Foot = styled.div`
+    display: flex;
+    margin: 0 auto;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+`;
+
+export const Header = styled.h1`
     width: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transition: ease-in-out 600ms;
+    margin-left: 1rem;
+    font-weight: 900;
+    font-size: 1.618rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+    line-height: 1;
+    padding-bottom: 0.5em;
+    margin-bottom: 1rem;
+    position: relative;
 `;
 
-export const Menu = styled.div`
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+export const Description = styled.p`
+    width: 100%;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
 `;
 
-export const MenuLast = styled.div`
-    margin-bottem: 1em;
+export const HCard = styled.a`
+    color: inherit;
+    cursor: pointer;
+    width: calc(33% - 2rem);
+    min-width: calc(33% - 2rem);
+    height: 400px;
+    min-height: 400px;
+    perspective: 1000px;
+    margin: 1rem;
+    position: relative;
 `;
-
 

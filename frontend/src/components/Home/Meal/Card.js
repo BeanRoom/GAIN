@@ -1,14 +1,16 @@
 import React from 'react';
 
+import {Content, Foot, Header, Description, } from './Style';
+
 import './Style.css';
 
 class Card extends React.Component {
     render() {
         return (
             <div>
-                <div className="content">
-                    <h1 className="heading">급식</h1>
-                    <p className="description">뒤집어서 확인</p>
+                <Content>
+                    <Header>급식</Header>
+                    <Description>뒤집어서 확인</Description>
                     <a className="card" href="#!">
                         <div className="front">
                             아침
@@ -54,10 +56,12 @@ class Card extends React.Component {
                             </div>
                         </div>
                     </a>
-
-                </div>
+                    
+                </Content>
+                <Foot>
                 <a href="#" class="btn btn-white btn-animation-1">이전</a>
                 <a href="#" class="btn btn-white btn-animation-1">다음</a>
+                </Foot>
             </div>
         );
     }
