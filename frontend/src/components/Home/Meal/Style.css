@@ -34,9 +34,14 @@
 */
 /*
 .description {
-    
+    font-size: 1.7rem;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 */
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Do+Hyeon');
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -45,6 +50,7 @@
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    font-size: 1.2rem;
 }
 
 button {
@@ -56,7 +62,8 @@ html {
     line-height: 1.5;
     font-weight: 300;
     color: #333;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+    
 }
 body {
     margin: 0;
@@ -94,11 +101,11 @@ body {
   }
   
 .btn-white{
-  background:#fff;
-  color:#000;
-  margin-left: 2.5%;
-  margin-top: 1%;
-  float: left;
+    background: linear-gradient(135deg, #1a9be6, #1a57e6);
+    color:#fff;
+    margin-left: 2.5%;
+    margin-top: 1%;
+     float: left;
 }
 .btn-bottom-animation-1{
   animation:comeFromBottom 1s ease-out .8s;
@@ -119,10 +126,6 @@ body {
   display:inline-block;
   z-index:-1;
   transition: all .5s;
-}
-
-.btn-white::after {
-    background: #fff;
 }
 
 .btn-animation-1:hover::after {

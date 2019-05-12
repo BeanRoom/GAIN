@@ -5,12 +5,29 @@ import {Content, Foot, Header, Description, } from './Style';
 import './Style.css';
 
 class Card extends React.Component {
+    constructor() { 
+        super(); 
+   
+        var today = new Date(), 
+         date = today.getFullYear() + '년 ' + (today.getMonth() + 1) + '월 ' + today.getDate() + '일 '; 
+        
+         var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+    
+         var today = new Date().getDay();
+         var todayLabel = week[today];
+     
+        this.state = { 
+         date: date,
+         todayLabel: todayLabel
+        }; 
+       } 
+
     render() {
         return (
             <div>
                 <Content>
-                    <Header>급식</Header>
-                    <Description>뒤집어서 확인</Description>
+                    <Header>오늘의 식사</Header>
+                    <Description>{this.state.date} {this.state.todayLabel}</Description>
                     <a className="card" href="#!">
                         <div className="front">
                             아침

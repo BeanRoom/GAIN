@@ -4,6 +4,7 @@ import oc from 'open-color';
 export const Content = styled.div`
     display: flex;
     margin: 0 auto;
+    width: 1000px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -23,20 +24,21 @@ export const Header = styled.h1`
     width: 100%;
     margin-left: 1rem;
     font-weight: 900;
-    font-size: 1.618rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1ch;
     line-height: 1;
     padding-bottom: 0.5em;
-    margin-bottom: 1rem;
     position: relative;
+    margin-bottom: -1rem;
 `;
 
 export const Description = styled.p`
+    font-size: 1.7rem;
     width: 100%;
     margin-top: 0;
     margin-left: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 `;
 
 export const HCard = styled.a`
