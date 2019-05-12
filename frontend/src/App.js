@@ -16,10 +16,9 @@ class App extends React.Component {
         <Provider {...stores}>
           <Router history={history}>
             <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/' component={Meal} />
               <Route path='/channels' component={Home} />
               <Route path='/auth' component={Auth} />
-              <Route path='/meal' component={Meal} />
             </Switch>
           </Router>
         </Provider>

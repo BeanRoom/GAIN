@@ -3,12 +3,30 @@ import React from 'react';
 import './Style.css';
 
 class Card extends React.Component {
+    constructor() { 
+        super(); 
+   
+        var today = new Date(), 
+         date = today.getFullYear() + '년 ' + (today.getMonth() + 1) + '월 ' + today.getDate() + '일 '; 
+   
+         var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+    
+         var today = new Date().getDay();
+         var todayLabel = week[today];
+     
+    
+        this.state = { 
+         date: date,
+         todayLabel: todayLabel
+        }; 
+       } 
+
     render() {
         return (
             <div>
                 <div className="content">
                     <h1 className="heading">급식</h1>
-                    <p className="description">뒤집어서 확인</p>
+                    <p className="description">{this.state.date}{this.state.todayLabel}</p>
                     <a className="card" href="#!">
                         <div className="front">
                             아침
@@ -46,7 +64,7 @@ class Card extends React.Component {
                         <div className="back">
                             <div>
                                 <p>백미밥</p>
-                                <p>꼬치어묵국</p>
+                                <p>꼬치어묵국</p>z
                                 <p>깍두기</p>
                                 <p>스테이크</p>
                                 <p id="last">석류푸딩</p>
@@ -54,10 +72,12 @@ class Card extends React.Component {
                             </div>
                         </div>
                     </a>
-
+                   
                 </div>
+                <div className="footer">
                 <a href="#" class="btn btn-white btn-animation-1">이전</a>
-                <a href="#" class="btn btn-white btn-animation-1">다음</a>
+                    <a href="#" class="btn btn-white btn-animation-1">다음</a>
+                </div>
             </div>
         );
     }

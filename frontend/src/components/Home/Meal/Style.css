@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic');
+
 *, *:before, *:after {
     box-sizing: border-box;
 }
+
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-}
+    font-size: rem;}
 
 button {
     outline: none;
@@ -17,7 +20,7 @@ html {
     line-height: 1.5;
     font-weight: 300;
     color: #333;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 body {
     margin: 0;
@@ -108,11 +111,23 @@ body {
     flex-wrap: wrap;
     max-width: 1000px;
 }
+
+.footer {
+    display: flex;
+    margin: 0 auto;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
 .heading {
     width: 100%;
     margin-left: 1rem;
     font-weight: 900;
-    font-size: 1.618rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1ch;
     line-height: 1;
@@ -133,7 +148,9 @@ body {
     width: 100%;
     margin-top: 0;
     margin-left: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    
 }
 .card {
     color: inherit;
@@ -171,6 +188,7 @@ body {
     backface-visibility: hidden;
     transform-style: preserve-3d;
     transition: ease-in-out 600ms;
+
 }
 .front {
     background-size: cover;
