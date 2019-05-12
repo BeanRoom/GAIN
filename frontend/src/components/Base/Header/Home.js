@@ -19,6 +19,7 @@ const Style = styled(NavLink)`
 
     &:visited{
         text-decoration: none;
+        color: white;
     }
 
     &:hover{

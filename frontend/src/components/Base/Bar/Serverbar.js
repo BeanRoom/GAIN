@@ -9,7 +9,7 @@ import Home from 'components/Base/Header/Home';
 import ServerList from './ServerList';
 
 const Wrapper = styled.div`
-    background-color: ${oc.indigo[8]};
+    background-color: ${oc.gray[9]};
     width: 150px;
     min-width: 150px;
     height: 100%;
@@ -22,7 +22,7 @@ class Serverbar extends React.Component{
     render(){
         return(
             <Wrapper>
-                <Home to='/channels/@me/'/>
+                <Home to='/channels/@me'/>
                 <ServerList />
             </Wrapper>
         )

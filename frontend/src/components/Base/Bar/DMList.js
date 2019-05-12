@@ -12,22 +12,43 @@ const Component = styled.div`
 
     &::-webkit-scrollbar {
         display: none;
-     }
+    }
 `
 
 const Button = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
+    border-radius: 3px;
     color: white;
-
+    
     &:hover{
-        background-color: ${oc.indigo[7]}
+        background-color: ${oc.gray[7]};
+        text-decoration: none;
+    }
+
+    &:link{
+        text-decoration: none;
+    }
+
+    &:visited{
+        text-decoration: none;
+        color: white;
+    }    
+    
+    &:active{
+        text-decoration: none;
     }
 
     &.active{
-        background-color: ${oc.indigo[9]}
+        background-color: #565E64;
     }
+`
+
+const H4 = styled.h4`
+    margin: 0px;
+    margin-left: 10px;
+    font-weight: normal;
 `
 
 const Label = styled.div`
@@ -58,14 +79,14 @@ const ServerList = () => {
     return (
         <Component>
             <MenuWrapper>
-                <Button to='/channels/@me/home' activeClassName="active">Home</Button>
-                <Button to='/channels/@me/board' activeClassName="active">Board</Button>
+                <Button to='/channels/@me/home' activeClassName="active"><H4>Home</H4></Button>
+                <Button to='/channels/@me/board' activeClassName="active"><H4>Board</H4></Button>
             </MenuWrapper>
             <Label><H5>개인 메세지</H5></Label>
             <DMWrapper>
-                <Button to='/channels/@me/1' activeClassName="active">kim</Button>
-                <Button to='/channels/@me/2' activeClassName="active">lee</Button>
-                <Button to='/channels/@me/3' activeClassName="active">choi</Button>
+                <Button to='/channels/@me/1' activeClassName="active"><H4>Kim</H4></Button>
+                <Button to='/channels/@me/2' activeClassName="active"><H4>Lee</H4></Button>
+                <Button to='/channels/@me/3' activeClassName="active"><H4>Choi</H4></Button>
             </DMWrapper>
         </Component>
     );

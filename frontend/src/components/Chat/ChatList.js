@@ -17,11 +17,11 @@ const Box = styled.div`
     }
 
     &::-webkit-scrollbar-track {
-        background: ${oc.indigo[2]};
+        background: ${oc.gray[5]};
     }
 
     &::-webkit-scrollbar-thumb {
-        background: ${oc.indigo[5]};
+        background: ${oc.gray[7]};
         height: 10%;
         border-radius: 10px;
     }

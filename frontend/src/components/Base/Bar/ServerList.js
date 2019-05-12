@@ -13,48 +13,59 @@ const Component = styled.div`
 
     &::-webkit-scrollbar {
         display: none;
-     }
+    }
 `
 
 const Server = styled(NavLink)`
     width: 100%;
     height: 30px;
     line-height: 30px;
+    border-radius: 3px;
     color: white;
 
     &:hover{
-        background-color: ${oc.indigo[7]};
+        background-color: ${oc.gray[8]};
     }
+
+    &:link{
+        text-decoration: none;
+    }
+
+    &:visited{
+        text-decoration: none;
+        color: white;
+    }
+
+    &:hover{
+        text-decoration: none;
+    }
+
+    &:active {
+        text-decoration: none;
+    }
+`
+
+const H4 = styled.h4`
+    margin: 0px;
+    margin-left: 10px;
+    font-weight: normal;
 `
 
 const ServerList = () => {
     return (
         <Component>
-            <Server>server 1</Server>
-            <Server>server 2</Server>
-            <Server>server 3</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
-            <Server>server 4</Server>
+            <Server><H4>Server1</H4></Server>
+            <Server><H4>Server2</H4></Server>
+            <Server><H4>Server3</H4></Server>
+            <Server><H4>Server4</H4></Server>
+            <Server><H4>Server5</H4></Server>
+            <Server><H4>Server6</H4></Server>
+            <Server><H4>Server7</H4></Server>
+            <Server><H4>Server8</H4></Server>
+            <Server><H4>Server9</H4></Server>
+            <Server><H4>Server1</H4></Server>
+            <Server><H4>Server1</H4></Server>
+            <Server><H4>Server1</H4></Server>
         </Component>
     );
 };

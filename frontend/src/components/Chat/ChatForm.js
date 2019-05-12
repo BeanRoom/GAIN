@@ -11,7 +11,7 @@ import ChatTitle from 'components/Base/Header/ChatTitle';
 
 const Wrapper = styled.div`
     flex: 1;
-    background-color: white;
+    background-color: ${oc.gray[0]};
     height: 100%;
     width: 100%;
     overflow-x: hidden;
