@@ -1,4 +1,4 @@
-# GAIN Frontend
+# GAIN Backend
 
 ## Getting started
 `yarn dev`
