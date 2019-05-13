@@ -3,13 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import oc from 'open-color';
 
-import Card from '../components/Home/Meal/Card';
+import CardList from '../components/Home/Meal/CardList';
 
 class MealContainer extends React.Component {
   render() {
     return (
         <div>
-            <Card />
+            <CardList />
         </div>
     );
   }
