@@ -33,7 +33,6 @@ class CardList extends React.Component {
                 <Card time="아침"/>
                 <Card time="점심"/>
                 <Card time="저녁"/>
-                
             </Container>
             <NButton/>
             </>
