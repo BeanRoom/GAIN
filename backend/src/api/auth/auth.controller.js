@@ -24,14 +24,14 @@ export const Register = async (ctx) => {
     // Joi 라이브러리를 활용해서 형식을 검사하기 위해 객체를 하나 만들어 줌.
     // 왼쪽의 각 name에 해당하는 값의 요구조건임을 알 수 있다.
     // id를 예시로 들자면 '형식은 string이고, 입력 가능한 것은 alphanum( a-z, A-Z, 0-9 )이고, 최소 6글자 최대 30글자, 무조건 입력되야한다'라는 것을 알 수 있다.
-    const FirstRegisteration = Joi.object().keys({
+    const Registeration = Joi.object().keys({
         id : Joi.string().alphanum().min(6).max(50).required(),
         password : Joi.string().min(6).max(50).required(),
         authCode : Joi.string().alphanum().required()  
     });
 
     // 위에서 만든 Joi 객체를 이용해서 사용자가 입력한 정보(ctx.request.body)와 비교한다.
-    const firstResult = Joi.validate(ctx.request.body, FirstRegisteration);
+    const firstResult = Joi.validate(ctx.request.body, Registeration);
 
     // 비교한 뒤 만약 에러가 발생한다면 400 에러코드를 전송하고, body에 001 이라는 내용(우리끼리의 오류 코드 약속)을 담아 joi 오류임을 알려줌
     if(firstResult.error) {
@@ -54,7 +54,7 @@ export const Register = async (ctx) => {
     // exist의 길이가 0이 아니라면, 중복된 아이디가 있다는 뜻
     // 따라서 만약 중복된 아이디가 있다면, 400 에러코드를 전송하고, body에 002라는 내용을 담아서 보냄
     if(exist.length){
-        console.log(`Register - 이미 존재하는 아이디입니다. / 입력된 유저코드 : ${ctx.request.body.id}`);
+        console.log(`Register - 이미 존재하는 아이디입니다. / 입력된 아이디 : ${ctx.request.body.id}`);
 
         ctx.status = 400;
         ctx.body = {
@@ -84,8 +84,8 @@ export const Register = async (ctx) => {
     // 사용자가 입력한 코드와 설정한 코드가 일치하는 지 확인하고, 값을 보내줌
     let auth = authorizeUser(ctx.request.body.authCode);
 
-    // 만약 auth가 2라면 지정하지 않은 유저코드이므로, 회원가입을 못 하게끔 함
-    if(auth == 2){
+    // 만약 auth가 3이라면 지정하지 않은 유저코드이므로, 회원가입을 못 하게끔 함
+    if(auth == 3){
         console.log(`Register - 존재하지 않는 유저코드입니다. / 입력된 유저코드 : ${ctx.request.body.authCode}`);
 
         ctx.status = 400;
