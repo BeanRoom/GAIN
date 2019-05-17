@@ -64,11 +64,11 @@ export const Register = async (ctx) => {
     }
 
     // 데이터베이스에 저장할 내용을 정리하는 코드
-    let id = ctx.request.body.id;
+    const id = ctx.request.body.id;
 
     // 비밀번호를 crypto 모듈을 이용해서 암호화해줌.
-    let password = ctx.request.body.password;
-    let password2 = crypto.createHmac('sha256', process.env.Password_KEY).update(password).digest('hex');
+    const password = ctx.request.body.password;
+    const password2 = crypto.createHmac('sha256', process.env.Password_KEY).update(password).digest('hex');
     
     // userCode는 U0001 과 같은 5글자로 표현되는데, 이를 위해서 account 테이블의 모든 데이터를 받아온 후, length로 갯수를 셈.
     // 그 후 for문으로 부족한 0 갯수를 채워주고, 맨 앞에 U를 붙임
@@ -82,7 +82,7 @@ export const Register = async (ctx) => {
     userCode = "U" + userCode;
 
     // 사용자가 입력한 코드와 설정한 코드가 일치하는 지 확인하고, 값을 보내줌
-    let auth = authorizeUser(ctx.request.body.authCode);
+    const auth = authorizeUser(ctx.request.body.authCode);
 
     // 만약 auth가 3이라면 지정하지 않은 유저코드이므로, 회원가입을 못 하게끔 함
     if(auth == 3){
@@ -107,3 +107,33 @@ export const Register = async (ctx) => {
     });
 }
 
+export const Login = async (ctx) => {
+    
+    // Joi 라이브러리를 활용해서 형식을 검사하기 위해 객체를 하나 만들어 줌.
+    const LoginInput = Joi.object().keys({
+        id : Joi.string().alphanum().min(6).max(50).required(),
+        password : Joi.string().min(6).max(50).required(),  
+    });
+
+    // 넘어온 body의 형식을 검사한다.
+    const Result = Joi.validate(ctx.request.body, LoginInput);
+
+    // 만약 형식이 불일치한다면, 그 이후 문장도 실행하지 않는다.
+    if(Result.error) {
+        console.log(`Login - Joi 형식 에러`);
+        ctx.status = 400;
+        ctx.body = {
+            "error" : "001"
+        }
+        return;
+    }
+
+    // 데이터베이스에 해당하는 아이디가 있는지 검사합니다.
+    const founded = account.findAll({
+        where: {
+            id : ctx.request.body.id
+        }
+    });
+
+    
+}   
