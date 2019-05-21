@@ -2,6 +2,8 @@ import React from 'react';
 
 import {Card, Front, Back, Meal} from './Style'
 
+import Thumbs from './Thumbs';
+
 class CardHolder extends React.Component {
     render () {
         return (
@@ -14,7 +16,7 @@ class CardHolder extends React.Component {
                 </Back>
             </Card>
         );
-    }
+    };
 }
 
 export default CardHolder;
